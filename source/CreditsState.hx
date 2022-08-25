@@ -186,21 +186,21 @@ class CreditsState extends MusicBeatState
 				var shiftMult:Int = 1;
 				if(FlxG.keys.pressed.SHIFT) shiftMult = 3;
 
-				var upP = controls.UI_UP_P;
-				var downP = controls.UI_DOWN_P;
+				var leftP = controls.UI_LEFT_P;
+				var rightP = controls.UI_RIGHT_P;
 
-				if (upP)
+				if (leftP)
 				{
 					changeSelection(-1 * shiftMult);
 					holdTime = 0;
 				}
-				if (downP)
+				if (rightP)
 				{
 					changeSelection(1 * shiftMult);
 					holdTime = 0;
 				}
 
-				if(controls.UI_DOWN || controls.UI_UP)
+				if(controls.UI_RIGHT || controls.UI_LEFT)
 				{
 					var checkLastHold:Int = Math.floor((holdTime - 0.5) * 10);
 					holdTime += elapsed;
